@@ -18,7 +18,6 @@ const seasonConfig = {
 
 const SeasonDisplay = (props) => {
 
-
     const month = new Date().getMonth()  // can be const, but use let for variables
     const lat = props.lat
     let season = ""
