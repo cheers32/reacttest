@@ -11,6 +11,7 @@ class Clock extends React.Component {
     state = {time: new Date().toLocaleTimeString()}
 
     render() { /*call by state, not by this.time*/
+        // console.log("clock rerendered")
         return (
             <div className="time">
                 The time is: {this.state.time}
