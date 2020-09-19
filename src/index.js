@@ -1,4 +1,7 @@
 // import the React and ReactDom libraries
+// npx create-react-app my-app
+// create-react-app my-app + npm install create-react-app
+// code . to open project in code
 import React from 'react';   // ES2015 module system
 import ReactDOM from 'react-dom';
 import faker from 'faker';   // used --save flag during npm install; previously used -g when installing create-react-app
@@ -9,6 +12,7 @@ import SeasonDisplay from "./SeasonDisplay";
 import Spinner from "./Spinner";
 import Clock from "./Clock"
 import App3 from "./components/App3";
+import WidgetApp from "./widget/WidgetApp";
 
 //const React_old = require('react')   // CommonJS modules
 // https://github.com/StephenGrider/redux-code
@@ -99,7 +103,8 @@ class App2 extends React.Component {  // must extend from React.Component, must 
 // take react component and show it on the screen
 ReactDOM.render(  // this render method will be called after setState() happens
     //<App2 />,
-    <App3 />,
+    //<App3 />,
+    <WidgetApp />,
     document.querySelector('#root')
 );
 
