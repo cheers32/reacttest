@@ -14,10 +14,13 @@ import Clock from "./Clock"
 import App3 from "./components/App3";
 import WidgetApp from "./widget/WidgetApp";
 import ReduxSongApp from "./redux_songs/ReduxSongApp";
+import thunk from "redux-thunk";
 
 import {Provider} from 'react-redux'
-import {createStore} from 'redux'
-import reducers from './redux_songs/reducers'
+import {createStore, applyMiddleware} from 'redux'
+// import reducers from './redux_songs/reducers'
+import reducers from './blog/reducers'
+import BlogApp from "./blog/BlogApp";
 
 //const React_old = require('react')   // CommonJS modules
 // https://github.com/StephenGrider/redux-code
@@ -27,19 +30,20 @@ import reducers from './redux_songs/reducers'
 // the None is "undefined" in JS
 //const App = function() {
 const App = () => {   // ES2015 arrow function
-    //return <div> Hi there3! </div>;   // this return value is a JSX, it's not html, it will be converted to normal JS code
+                      //return <div> Hi there3! </div>;   // this return value is a JSX, it's not html, it will be converted to normal JS code
     return (
         <div className="ui container comments">
             {window.navigator.geolocation.getCurrentPosition(
                 (position) => console.log(position),
                 (err) => console.log(err)
             )};
-            <CommentDetail author={'Sam'} />  // here it's referring to a component, not a variable, so using element tag, not braces.
-            <CommentDetail author={'Alex'} />
-            <CommentDetail author={'Jane'} />
-            <CommentDetail />
+            <CommentDetail author={'Sam'}/> // here it's referring to a component, not a variable, so using element tag,
+            not braces.
+            <CommentDetail author={'Alex'}/>
+            <CommentDetail author={'Jane'}/>
+            <CommentDetail/>
             <ApprovalCard>
-                <CommentDetail />
+                <CommentDetail/>
             </ApprovalCard>
             <ApprovalCard>
                 <h4>Warning</h4>
@@ -78,17 +82,16 @@ class App2 extends React.Component {  // must extend from React.Component, must 
     }
 
     renderBody() {
-        if(this.state.lat)
+        if (this.state.lat)
             //return <div>Latitude: {this.state.lat}, Longitude: {this.state.long}</div>;
             return <SeasonDisplay lat={this.state.lat}/>
-        else if(this.state.errorMessage) {
+        else if (this.state.errorMessage) {
             return <div>errMessage: {this.state.errorMessage}</div>;
-        }
-        else
+        } else
             //return <div>Loading...</div>;
             return (
                 //<Spinner message={"Please accept location request."}/>
-                <Spinner />
+                <Spinner/>
             );
     }
 
@@ -96,7 +99,7 @@ class App2 extends React.Component {  // must extend from React.Component, must 
     render() {  // use a renderBody to wrap conditional logic, so that the common div can be outside
         return (
             <div className="boarder red">
-                <Clock />
+                <Clock/>
                 {this.renderBody()}
                 {this.test2}
             </div>
@@ -105,13 +108,19 @@ class App2 extends React.Component {  // must extend from React.Component, must 
     }
 }
 
+const store = createStore(reducers, applyMiddleware(thunk))
+
 // take react component and show it on the screen
 ReactDOM.render(  // this render method will be called after setState() happens
     //<App2 />,
     //<App3 />,
     //<WidgetApp />,
-    <Provider store={createStore(reducers)}>
-        <ReduxSongApp />
+    // <Provider store={createStore(reducers)}>
+    //     <ReduxSongApp />
+    // </Provider>,
+
+    <Provider store={store}>
+        <BlogApp/>
     </Provider>,
     document.querySelector('#root')
 );
