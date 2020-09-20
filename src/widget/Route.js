@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 
-const Route = ( { path, children }) => {
-
+const Route = ( props) => {
+    const path = props.path
+    const children = props.children
     const [currentPath, setCurrentPath] = useState(window.location.pathname)
 
     useEffect(() => {

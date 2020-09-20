@@ -1,3 +1,8 @@
+// under project directory, "git add ." to add all files to git; git commit -m "comment"
+// link remote to local project: git remote add origin git@github.com:cheers32/reacttest.git
+// "git status" to see local changes
+// "git push origin master" to push all changes
+// netlify, vercel to do deployment
 import React, {useState} from "react";
 import Accordion from "./Accordion";
 import Search from "./Search";
@@ -68,7 +73,7 @@ export default () => {
                 <Search/>
             </Route>
             <Route path="/dropdown">
-                <DropdownList label="Select a Color" options={options} selected={selectedColor}
+                <DropdownList label="Select a good Color" options={options} selected={selectedColor}
                               onSelectedChange={setSelectedColor}/>
             </Route>
             <Route path="/translate">

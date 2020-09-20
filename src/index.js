@@ -13,6 +13,11 @@ import Spinner from "./Spinner";
 import Clock from "./Clock"
 import App3 from "./components/App3";
 import WidgetApp from "./widget/WidgetApp";
+import ReduxSongApp from "./redux_songs/ReduxSongApp";
+
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+import reducers from './redux_songs/reducers'
 
 //const React_old = require('react')   // CommonJS modules
 // https://github.com/StephenGrider/redux-code
@@ -104,7 +109,10 @@ class App2 extends React.Component {  // must extend from React.Component, must 
 ReactDOM.render(  // this render method will be called after setState() happens
     //<App2 />,
     //<App3 />,
-    <WidgetApp />,
+    //<WidgetApp />,
+    <Provider store={createStore(reducers)}>
+        <ReduxSongApp />
+    </Provider>,
     document.querySelector('#root')
 );
 

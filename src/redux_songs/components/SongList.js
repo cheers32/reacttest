@@ -1,0 +1,44 @@
+import React, {Component} from "react";
+import {connect} from 'react-redux'
+
+class SongList extends Component {
+    renderList() {
+        return this.props.songs.map(
+            (s => {
+                return (
+                    <div className="item" key={s.title}>
+                        <div className="right floated content">
+                            <button className="ui button primary">Select</button>
+                        </div>
+                        <div className="content">
+                            {s.title}
+                        </div>
+                    </div>
+                )
+            })
+        )
+    }
+
+    render() {
+        console.log(this.props)
+        const renderedList = this.renderList()
+        return <div className="ui divided list">
+            SongList
+            {renderedList}
+        </div>
+    }
+}
+
+const mapStateToProps = (state) => {  // this is a convention, like getMyState, always take input as state
+    console.log(state)
+    //return state
+    console.log({key: state.songs.map(s => s.title)})
+    console.log({songs: state.songs})
+    //return {key: state.songs.map(s => s.title)}
+    return {songs: state.songs}  // this is my props, always an object
+}
+
+export default connect(mapStateToProps)(SongList)
+//export default SongList
+
+// this connect function is a react component, is a function reference
