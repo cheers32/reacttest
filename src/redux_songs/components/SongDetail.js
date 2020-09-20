@@ -5,10 +5,10 @@ const SongDetail = (props) => {
     console.log("my props:")
     console.log(props)
     console.log(props.selectedSong)
-    const renderedResult = props.selectedSong ? props.selectedSong.title + ":" + props.selectedSong.duration : "N/a"
+    const renderedResult = props.selectedSong ? props.selectedSong.title + ": duration=" + props.selectedSong.duration : "Select a song to view detail"
     return <div>
-        hello
         <div>
+            <h3>Details for: </h3>
             {renderedResult}
         </div>
     </div>
