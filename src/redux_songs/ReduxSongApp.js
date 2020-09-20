@@ -1,6 +1,7 @@
 import React from "react";
 import {selectSong} from "./actions";
-import SongList from "./components/SongList"; // import named function; index.js makes only need to specify folder name
+import SongList from "./components/SongList";
+import SongDetail from "./components/SongDetail"; // import named function; index.js makes only need to specify folder name
 
 const ReduxSongApp = () => {
     selectSong()
@@ -13,8 +14,9 @@ const ReduxSongApp = () => {
                     <SongList />
                 </div>
             </div>
-
-
+        </div>
+        <div className="column eight wide">
+            <SongDetail />
         </div>
     </div>
 }
