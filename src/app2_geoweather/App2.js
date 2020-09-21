@@ -1,7 +1,7 @@
 import React from "react";
 import SeasonDisplay from "./components/SeasonDisplay";
 import Spinner from "./components/Spinner";
-import Clock from "../Clock";
+import Clock from "../shared/Clock";
 
 class App2 extends React.Component {  // must extend from React.Component, must define render and return JSX
     // JS special function

@@ -7,7 +7,7 @@ import React, {useState} from "react";
 import Accordion from "./Accordion";
 import Search from "./Search";
 import DropdownList from "./DropdownList";
-import Clock from "../Clock";
+import Clock from "../shared/Clock";
 import Translate from "./Translate";
 import Route from "./Route";
 import Header from "./Header";
