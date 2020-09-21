@@ -1,0 +1,26 @@
+// import the React and ReactDom libraries
+// npx create-react-app my-app
+// create-react-app my-app + npm install create-react-app
+// code . to open project in code
+
+// used --save flag during npm install; previously used -g when installing create-react-app
+// otherwise will need to put files in public folder for static contents
+
+//const React_old = require('react')   // CommonJS modules
+// https://github.com/StephenGrider/redux-code
+// even though not required, it's recommended to use JSX instead of react function calls like React.createElement()
+// browsers don't know JSX, so JSX converted by Babel to JS
+// create a react component, function or a class
+// the None is "undefined" in JS
+
+// with {{}} syntax, it means {} is a JS variable reference, then 2nd {} is a JS object with {key: 'value', key2: 'value2'} style
+// this is called JSX interpolation:
+// define variable: const myVar = 'hi';
+// define function: function myFunc() {return 'hello';}, this function call can be used as a variable. this is not JS syntax, but JSX syntax to refer to JS variable
+// cannot reference a JS object directly, can refer its value by using key
+// use className instead of class for inline style; use "htmlFor" instead of "for"
+// object can be used in style, but cannot use as text
+
+// ES2015 module system
+
+// take react component and show it on the screen

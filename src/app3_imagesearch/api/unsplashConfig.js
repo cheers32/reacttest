@@ -1,4 +1,4 @@
-import axios from 'axios'  // can make default instance; this is an ajax client
+import axios from 'axios'  // can make default instance; this is an ajax client // external import at front
 
 //export default axios.create({
 const defaultInstance = axios.create({

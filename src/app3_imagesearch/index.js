@@ -1,10 +1,8 @@
-//import axios from 'axios'   // external at front
-import unsplash from "../api/unsplashConfig";
+import unsplash from "./api/unsplashConfig";
 import React from "react";
-import ReactDOM from "react-dom"
-import SearchBar from "./SearchBar";
+import SearchBar from "./components/SearchBar";
 import Clock from "../Clock";
-import ImageList from "./ImageList";
+import ImageList from "./components/ImageList";
 
 class App3 extends React.Component {
     state = { images: []}  // map is a built-in function for array
