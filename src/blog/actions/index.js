@@ -1,7 +1,6 @@
 import jsonPlaceholder from "../apis/jsonPlaceholder";
 
 export const fetchPosts = () => {
-
     // Bad approach!
     // const response = await jsonPlaceholder.get('/posts')
     // return {
@@ -9,9 +8,9 @@ export const fetchPosts = () => {
     //     payload: response
     // }
 
-    return async  (dispatch) => {
+    return async (dispatch) => {  // will receive dispatch and getState method from redux
         const response = await jsonPlaceholder.get('/posts')
-        //dispatch({type: 'FETCH_POST', payload: response})
+        dispatch({type: 'FETCH_POST', payload: response})  // will let redux dispatcher send result once obtained to continue flow
 
         // return {
         //     type: 'FETCH_POSTS',

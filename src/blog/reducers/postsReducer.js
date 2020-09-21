@@ -12,7 +12,7 @@ export default (state = [], action) => {
             console.log("state changed="+state)
             return action.payload
         default:
-            console.log("state unchanged=" + state)
+            console.log("state unchanged.")
             return state
     }
 }

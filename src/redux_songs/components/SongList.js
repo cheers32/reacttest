@@ -33,6 +33,7 @@ class SongList extends Component {
 }
 
 const mapStateToProps = (state) => {  // this is a convention, like getMyState, always take input as state
+    console.log("my state is=" + state)
     console.log(state)
     //return state
     //console.log({key: state.songs.map(s => s.title)})

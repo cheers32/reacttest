@@ -14,7 +14,7 @@ ReactDOM.render(
     //<App2 />,
     //<App3 />,
     //<WidgetApp />,
-    //<ReduxSongApp />,
-    <ReduxBlogApp/>,
+    <ReduxSongApp />,
+    //<ReduxBlogApp/>,
     document.querySelector('#root')
 );

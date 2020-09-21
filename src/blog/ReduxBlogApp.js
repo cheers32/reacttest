@@ -5,12 +5,12 @@ import {applyMiddleware, createStore} from "redux";
 import blogReducers from "./reducers";
 import thunk from "redux-thunk";
 
-
 const ReduxBlogApp = () => {
     return (
+        // use middleware to do async calls
         <Provider store={createStore(blogReducers, applyMiddleware(thunk))}>
-            <div
-                className={"ui container"}><PostList/>
+            <div className={"ui container"}>
+                <PostList/>
             </div>
         </Provider>
     )}
