@@ -46,7 +46,7 @@ class App2 extends React.Component {  // must extend from React.Component, must 
     render() {  // use a renderBody to wrap conditional logic, so that the common div can be outside
         return (
             <div className="boarder red">
-                <Clock/>
+                {/*<Clock/>*/}
                 {this.renderBody()}
                 {this.test2}
             </div>

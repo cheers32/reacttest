@@ -60,23 +60,23 @@ export default () => {
         <div>
             {/*<button onClick={() => setShowDropdown(!showDropdown)}>Toggle Dropdown</button>*/}
             {/*<h1>Widget App</h1>*/}
-            <Clock/>
+            {/*<Clock/>*/}
             <Header/>
             {/*{showAccordion()}*/}
             {/*{showList()}*/}
             {/*{showDropdownList()}*/}
             {/*{showTranslate()}*/}
-            <Route path="/">
+            <Route path="/4">
                 <Accordion items={items}/>
             </Route>
-            <Route path="/list">
+            <Route path="/4/list">
                 <Search/>
             </Route>
-            <Route path="/dropdown">
+            <Route path="/4/dropdown">
                 <DropdownList label="Select a good Color" options={options} selected={selectedColor}
                               onSelectedChange={setSelectedColor}/>
             </Route>
-            <Route path="/translate">
+            <Route path="/4/translate">
                 <Translate/>
             </Route>
             {/*<Accordion items={items} />*/}

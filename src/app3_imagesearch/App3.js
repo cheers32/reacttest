@@ -10,7 +10,7 @@ class App3 extends React.Component {
     render() {
         return(
             <div className="ui container" style={{marginTop: '10px'}}>
-                <Clock />
+                {/*<Clock />*/}
                 <SearchBar onSubmit2={this.handleSearchSubmit2} />
                 Found: {this.state.images.length} images!
                 <ImageList images={this.state.images} />

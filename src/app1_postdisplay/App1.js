@@ -11,7 +11,7 @@ const App1 = () => {   // ES2015 arrow function
             {window.navigator.geolocation.getCurrentPosition(
                 (position) => console.log(position),
                 (err) => console.log(err)
-            )};
+            )}
             <CommentDetail author={'Sam'}/> // here it's referring to a component, not a variable, so using element tag,
             not braces.
             <CommentDetail author={'Alex'}/>
