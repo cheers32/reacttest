@@ -23,12 +23,11 @@ const StreamApp = () => {
         // JS component, instead of JSX, so use {}
         // no need to put div around route
         <div>
-            <Clock />
             StreamApp
             <BrowserRouter>
-                <Route path="/" exact component={PageOne}/>
-                <Route path="/pageTwo" component={PageTwo}/>
-                <Route path="/pageTwo" component={PageTwo}/>
+                <Route path="/7" exact component={PageOne}/>
+                <Route path="/7/pageTwo" component={PageTwo}/>
+                <Route path="/7/pageTwo" component={PageTwo}/>
             </BrowserRouter>
         </div>
     )

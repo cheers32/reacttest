@@ -11,6 +11,7 @@ const MenuBar = () => {
             <Link href="/4" className="item">Widgets</Link>
             <Link href="/5" className="item">Redux Song</Link>
             <Link href="/6" className="item">Redux Blog</Link>
+            <Link href="/7" className="item">React Router</Link>
         </div>
     )
 }
