@@ -24,3 +24,6 @@
 // ES2015 module system
 
 // take react component and show it on the screen
+
+// fetch() is a JS function that make a web call
+// window scope if using console in a website
