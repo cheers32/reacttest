@@ -1,7 +1,7 @@
 import unsplash from "./api/unsplashConfig";
 import React from "react";
 import SearchBar from "./components/SearchBar";
-import Clock from "../shared/Clock";
+//import Clock from "../shared/Clock";
 import ImageList from "./components/ImageList";
 
 class App3 extends React.Component {

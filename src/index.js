@@ -6,7 +6,7 @@ import App3 from "./app3_imagesearch/App3";
 import WidgetApp from "./app4_widget/WidgetApp";
 import ReduxSongApp from "./app5_redux_songs/ReduxSongApp";
 import ReduxBlogApp from "./app6_reduxblog/ReduxBlogApp";
-import StreamApp from "./app7_streams/client/StreamApp";
+import StreamApp from "./app7_streams/StreamApp";
 import {BrowserRouter, Route} from "react-router-dom";
 import MenuBar from "./shared/MenuBar";
 import Clock from "./shared/Clock";

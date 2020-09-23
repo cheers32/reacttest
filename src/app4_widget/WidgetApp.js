@@ -7,7 +7,7 @@ import React, {useState} from "react";
 import Accordion from "./Accordion";
 import Search from "./Search";
 import DropdownList from "./DropdownList";
-import Clock from "../shared/Clock";
+//import Clock from "../shared/Clock";
 import Translate from "./Translate";
 import Route from "./Route";
 import Header from "./Header";
@@ -24,37 +24,37 @@ const options = [
     {label: "Blue Shade", value: "blue"},
 ]
 
-const showAccordion = () => {
-    if (window.location.pathname === '/') {
-        return <Accordion items={items}/>
-    }
-}
+// const showAccordion = () => {
+//     if (window.location.pathname === '/') {
+//         return <Accordion items={items}/>
+//     }
+// }
 
-const showList = () => {
-    if (window.location.pathname === '/list') {
-        return <Search/>
-    }
-}
+// const showList = () => {
+//     if (window.location.pathname === '/list') {
+//         return <Search/>
+//     }
+// }
 
-const showDropdownList = () => {
-    if (window.location.pathname === '/dropdown') {
-        return <DropdownList/>
-    }
-}
+// const showDropdownList = () => {
+//     if (window.location.pathname === '/dropdown') {
+//         return <DropdownList/>
+//     }
+// }
 
-const showTranslate = () => {
-    if (window.location.pathname === '/translate') {
-        return <Translate/>
-    }
-}
+// const showTranslate = () => {
+//     if (window.location.pathname === '/translate') {
+//         return <Translate/>
+//     }
+// }
 
-const showComponent = (route, component) => {
-    return window.location.pathname === route ? component : null
-}
+// const showComponent = (route, component) => {
+//     return window.location.pathname === route ? component : null
+// }
 
 export default () => {
     const [selectedColor, setSelectedColor] = useState(options[0])
-    const [showDropdown, setShowDropdown] = useState(false)
+    //const [showDropdown, setShowDropdown] = useState(false)
 
     return (
         <div>

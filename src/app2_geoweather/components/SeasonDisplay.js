@@ -1,9 +1,8 @@
 import './SeasonDisplay.css'
 import React from "react";
 
-const myFunc = () => {  // all functions are defined like this
-
-}
+// const myFunc = () => {  // all functions are defined like this
+// }
 
 const seasonConfig = {
     summer: {

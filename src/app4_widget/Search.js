@@ -4,8 +4,8 @@ import axios from "axios"
 
 const Search = () => {
     const [term, setTerm] = useState("computer")
-    let term2 = 5
-    const [term3, setTerm3] = useState("")
+    //let term2 = 5
+    //const [term3, setTerm3] = useState("")
     const [results, setResults] = useState([])
     console.log(results)
     //console.log("rendering...")
@@ -48,12 +48,13 @@ const Search = () => {
         //axios.get("sfasdf").then(response => {console.log(response.data)}) // use promise  // easiest but less frequently used
         //console.log("here")
 
-    }, [term])  // could be nothing (every render) or empty array (first time), with value means a render with this field changing
+    //}, [term])  // could be nothing (every render) or empty array (first time), with value means a render with this field changing
+    }, [results.length, term])  // ESLint added results.length as a dependency
     // if multiple, any variable change would execution
     // this deps can only be state variable to be effective
 
     const renderedResults = results.map(r => {  // don't forget about the "key" property on the top level as rendered result
-        {/*// this is string templating*/}
+        // this is string templating
         return <div key={r.pageid} className="item">
             <div className="left floated content">
                 <a className="ui button" href={`https://en.wikipedia.org?curid=${r.pageid}`}>Go</a>

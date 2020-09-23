@@ -12,7 +12,8 @@ const App1 = () => {   // ES2015 arrow function
                 (position) => console.log(position),
                 (err) => console.log(err)
             )}
-            <CommentDetail author={'Sam'}/> // here it's referring to a component, not a variable, so using element tag,
+            {/*// here it's referring to a component, not a variable, so using element tag,*/}
+            <CommentDetail author={'Sam'}/>
             not braces.
             <CommentDetail author={'Alex'}/>
             <CommentDetail author={'Jane'}/>

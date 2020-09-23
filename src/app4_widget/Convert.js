@@ -44,7 +44,8 @@ const Convert = ({language, text}) => {
         //     console.log("clean up")
         // }
 
-    }, [language, debouncedText])
+    //}, [language, debouncedText])
+    }, [language, debouncedText, text])  // ESLint asks to add "text" as dependency
 
 
     return <div className="ui header">convert<hr />
