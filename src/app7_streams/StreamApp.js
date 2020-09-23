@@ -14,7 +14,6 @@ import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, compose} from "redux";
 import reducers from './reducers'
 import AppMenu from "./AppMenu";
-import GoogleAuth from "./client/GoogleAuth";
 
 // const PageOne = () => {
 //     return (
@@ -53,8 +52,7 @@ const StreamApp = () => {
         // the header contains link, required to be inside the BrowserRouter to work properly
         <Provider store={store}>
         <div>
-            StreamApp
-            {/*<Header />*/}
+            <h2>StreamApp</h2>
             <BrowserRouter>
                 <Header />
                 {AppMenu()}
