@@ -13,7 +13,8 @@ import Header from "./components/Header";
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, compose} from "redux";
 import reducers from './reducers'
-import MenuBar from "./components/MenuBar";
+import AppMenu from "./AppMenu";
+import GoogleAuth from "./client/GoogleAuth";
 
 // const PageOne = () => {
 //     return (
@@ -49,22 +50,22 @@ const StreamApp = () => {
         // JS component, instead of JSX, so use {}
         // no need to put div around route
         // uses actual path contains preset path logic
-        // the header contains link, but doesn't seem to be required to be inside the BrowserRouter anymore
+        // the header contains link, required to be inside the BrowserRouter to work properly
         <Provider store={store}>
         <div>
             StreamApp
             {/*<Header />*/}
-            {MenuBar()}
             <BrowserRouter>
                 <Header />
+                {AppMenu()}
                 {/*<Route path="/7/pageOne" exact={true} component={PageOne}/>*/}
                 {/*<Route path="/7/pageTwo" component={PageTwo}/>*/}
                 {/*<Route path="/7/pageTwo" component={PageTwo}/>*/}
                 <Route path="/7" exact component={StreamList}/>
                 <Route path="/7/new" component={StreamCreate}/>
                 <Route path="/7/edit" component={StreamEdit}/>
-                <Route path="/7/show" component={StreamShow}/>
                 <Route path="/7/delete" component={StreamDelete}/>
+                <Route path="/7/show" component={StreamShow}/>
             </BrowserRouter>
         </div>
         </Provider>
