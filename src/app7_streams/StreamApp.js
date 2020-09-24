@@ -7,13 +7,14 @@ import StreamEdit from "./components/StreamEdit";
 import StreamShow from "./components/StreamShow";
 import StreamDelete from "./components/StreamDelete";
 import Header from "./components/Header";
-// didn't see MemoryRouter
+// didn't see MemoryRouter-
 // HashRouter will make server to skip things after hash, so that to avoid server config to always return index.html
 
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, compose} from "redux";
 import reducers from './reducers'
 import AppMenu from "./AppMenu";
+import reduxThunk from "redux-thunk"
 
 // const PageOne = () => {
 //     return (
@@ -42,7 +43,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const StreamApp = () => {
     const store=createStore(
         reducers,
-        composeEnhancers(applyMiddleware())
+        composeEnhancers(applyMiddleware(reduxThunk))
         )
     return (
         // this is instance of BrowserRouter, similar to provider

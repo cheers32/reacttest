@@ -1,13 +1,16 @@
 import React from "react";
 import {Field, reduxForm} from 'redux-form'
-import Clock from "../../shared/Clock";  // similar to connection function
+import Clock from "../../shared/Clock";
+import {connect} from "react-redux";
+import {createStream} from "../actions";  // similar to connection function
+
 
 class StreamCreate extends React.Component {
 
     renderInput = (formProps) => {
     //renderInput({name, input, label, meta}) {
-        console.log(formProps)
-        console.log(formProps.input.name)
+        //console.log(formProps)
+        //console.log(formProps.input.name)
         //console.log(meta)
         const className = `field ${formProps.meta.touched && formProps.meta.error ? 'error' : ''}`
         return (
@@ -42,8 +45,9 @@ class StreamCreate extends React.Component {
     }
 
     //onSubmit(event) {
-    onSubmit(formValues) {  // this is just pure form values with their keys
+    onSubmit = (formValues)  => {  // this is just pure form values with their keys
         console.log(formValues)
+        this.props.createStream(formValues)
         //event.preventDefault()  // stops to submit to backend server; this was handled by redux form automatically; no more event param to take
     }
 
@@ -73,8 +77,16 @@ const validate = formValues => {
     return errors
 }
 
-export default reduxForm({
+// export default connect(reduxForm({
+//     form: 'streamCreateForm',
+//     //validate: validate
+//     validate
+// })(StreamCreate))
+
+const formWrapped = reduxForm({
     form: 'streamCreateForm',
     //validate: validate
     validate
 })(StreamCreate)
+
+export default connect(null, {createStream})(formWrapped)

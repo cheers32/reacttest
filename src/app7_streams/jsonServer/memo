@@ -1,0 +1,5 @@
+// created json file using command npm init
+// afterwards, npm install --save json-server
+// json is not JS
+// use db.json to act as a DB
+// take out default script from package.json: "test": "echo \"Error: no test specified\" && exit 1",
