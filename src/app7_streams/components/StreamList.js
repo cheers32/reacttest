@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux"
 import {fetchStreams} from "../actions";
+import {Link} from "react-router-dom";
 
 class StreamList extends React.Component{
     componentDidMount() {
@@ -35,8 +36,9 @@ class StreamList extends React.Component{
     renderCreateButton() {
         if(this.props.isSignedIn)
             return (
-                <div className={"right floated content"}>
-                    <button className={"ui button primary"}>Create</button>
+                <div className={"right floated content"} style={{textAlign: 'right'}}>
+                    {/*<button className={"ui button primary"}>Create</button>*/}
+                    <Link to={"/7/new"} className={"ui button primary"}>Create Stream</Link>
                 </div>
             )
     }
@@ -49,7 +51,7 @@ class StreamList extends React.Component{
                 <div className={"ui celled list"}>
                 {this.renderList()}
                 </div>
-                {/*{renderCreateButton()}*/}
+                {this.renderCreateButton()}
             </div>
         )
     }

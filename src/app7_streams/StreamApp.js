@@ -1,5 +1,6 @@
 import React from "react";
-import {BrowserRouter, Route } from 'react-router-dom'
+//import {BrowserRouter, Route } from 'react-router-dom'
+import {Router, Route } from 'react-router-dom'
 //import { HashRouter, Link} from 'react-router-dom'
 import StreamList from "./components/StreamList";
 import StreamCreate from "./components/StreamCreate";
@@ -15,6 +16,7 @@ import {createStore, applyMiddleware, compose} from "redux";
 import reducers from './reducers'
 import AppMenu from "./AppMenu";
 import reduxThunk from "redux-thunk"
+import history from "./history";
 
 // const PageOne = () => {
 //     return (
@@ -54,7 +56,9 @@ const StreamApp = () => {
         <Provider store={store}>
         <div>
             <h2>StreamApp</h2>
-            <BrowserRouter>
+            {/*<BrowserRouter history={history}>*/}
+            {/*this browserRouter comes with a history object, so cannot use custom object*/}
+            <Router history={history}>
                 <Header />
                 {AppMenu()}
                 {/*<Route path="/7/pageOne" exact={true} component={PageOne}/>*/}
@@ -65,7 +69,7 @@ const StreamApp = () => {
                 <Route path="/7/edit" component={StreamEdit}/>
                 <Route path="/7/delete" component={StreamDelete}/>
                 <Route path="/7/show" component={StreamShow}/>
-            </BrowserRouter>
+            </Router>
         </div>
         </Provider>
     )

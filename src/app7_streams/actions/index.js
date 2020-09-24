@@ -1,5 +1,6 @@
 import streams from "../apis/streams";
 import {SIGN_IN, SIGN_OUT, CREATE_STREAM, FETCH_STREAMS, FETCH_STREAM, EDIT_STREAM, DELETE_STREAM} from "./actionTypes";
+import history from '../history'
 
 export const signIn = (userId) => {  // this is to define actionCreators that returns an action
     return {
@@ -21,6 +22,9 @@ export const createStream = (formValues) => async (dispatch, getState) => {
     const response = await streams.post('/streams', {...formValues, userId: currentUserId})
     console.log(response)
     dispatch({type: CREATE_STREAM, payload: response.data})
+
+    // programmatically navigate after the action is dispatched
+    history.push('/7')
 }
 
 export const fetchStream = (id) => async dispatch => {
