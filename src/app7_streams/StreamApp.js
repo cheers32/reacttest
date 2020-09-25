@@ -3,8 +3,8 @@ import React from "react";
 import {Router, Route } from 'react-router-dom'
 //import { HashRouter, Link} from 'react-router-dom'
 import StreamList from "./components/StreamList";
-import StreamCreate from "./components/StreamCreate";
-import StreamEdit from "./components/StreamEdit";
+import StreamCreate2 from "./components/StreamCreate2";
+import StreamEdit2 from "./components/StreamEdit2";
 import StreamShow from "./components/StreamShow";
 import StreamDelete from "./components/StreamDelete";
 import Header from "./components/Header";
@@ -65,9 +65,9 @@ const StreamApp = () => {
                 {/*<Route path="/7/pageTwo" component={PageTwo}/>*/}
                 {/*<Route path="/7/pageTwo" component={PageTwo}/>*/}
                 <Route path="/7" exact component={StreamList}/>
-                <Route path="/7/new" exact component={StreamCreate}/>
+                <Route path="/7/new" exact component={StreamCreate2}/>
                 {/*colon means a variable, looks like only usable when passing down*/}
-                <Route path="/7/edit/:id" exact component={StreamEdit}/>
+                <Route path="/7/edit/:id" exact component={StreamEdit2}/>
                 <Route path="/7/delete" exact component={StreamDelete}/>
                 <Route path="/7/show" exact component={StreamShow}/>
             </Router>

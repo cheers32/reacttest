@@ -1,32 +1,27 @@
 import React from "react";
 import {Field, reduxForm} from 'redux-form'
 import Clock from "../../shared/Clock";
-import {connect} from "react-redux";
-import {createStream} from "../actions";  // similar to connection function
 
 // refactor this and make this as a parent component, and use call back from stream form
-class StreamCreate extends React.Component {
+class StreamForm extends React.Component {
 
     renderInput = (formProps) => {
-    //renderInput({name, input, label, meta}) {
+    //renderInput = ({input, label, meta}) => { // this is passed in from Field
+        //const className = `field ${formProps.meta.touched && formProps.meta.error ? 'error' : ''}`
+        //console.log(input)
         //console.log(formProps)
-        //console.log(formProps.input.name)
-        //console.log(meta)
-        const className = `field ${formProps.meta.touched && formProps.meta.error ? 'error' : ''}`
         return (
-            // <div>I'm an input</div>
-            // <input onChange={formProps.input.onChange} value={formProps.input.value}/>
-            // <input {...formProps.input} />
-            //<div className={"field"}>
-            <div className={className}>
-                {/*{formProps.input.title}*/}
+            <div className={"field"}>
+                {/*<div className={className}>*/}
+                {/*<label>{label}</label>*/}
                 <label>{formProps.label}</label>
+                {/*<input {...input} autoComplete={"off"} />*/}
                 <input {...formProps.input} autoComplete={"off"} />
                 {/* this will automatically check for the input.name to see a match to display, no need to check value null*/}
+                {/*only pass the relevant form values for the corresponding field from the stream input object*/}
                 {/*initial or any user interaction*/}
                 <div>
-                    {/*{formProps.meta.error}*/}
-                    {/*calling "this" will cause a context error, because this renderInput is passed in to "render" and then the context doesn't carry*/}
+                    {/*{this.renderError(meta)}*/}
                     {this.renderError(formProps.meta)}
                 </div>
             </div>
@@ -44,24 +39,20 @@ class StreamCreate extends React.Component {
         }
     }
 
-    //onSubmit(event) {
-    onSubmit = (formValues)  => {  // this is just pure form values with their keys
-        console.log(formValues)
-        this.props.createStream(formValues)
-        //event.preventDefault()  // stops to submit to backend server; this was handled by redux form automatically; no more event param to take
+    onSubmit = (formValues)  => {
+        this.props.onSubmit(formValues)
     }
 
     render() {
-        //console.log(this.props)
         return (
             <div>
-                StreamCreate
                 {/*similar as before but added a new props call*/}
                 {/*add a class name error to show errors*/}
                 <form className={"ui form error"} onSubmit={this.props.handleSubmit(this.onSubmit)}>
                     <Field name="test" component={Clock}/>
                     <Field name="title" component={this.renderInput} label={"Enter Title"} />
                     <Field name="description" component={this.renderInput} label={"Enter Description"}/>
+                    <Field name="id" component={this.renderInput} label={"Stream ID"}/>
                     <button className={"ui button primary"}>Submit</button>
                 </form>
             </div>
@@ -72,21 +63,12 @@ class StreamCreate extends React.Component {
 const validate = formValues => {
     const errors = {}
     if(!formValues.title) {
-        errors.title = 'You must enter a title'  // this is assignment to a field in an object
+        errors.title = 'You must enter a title'
     }
     return errors
 }
 
-// export default connect(reduxForm({
-//     form: 'streamCreateForm',
-//     //validate: validate
-//     validate
-// })(StreamCreate))
-
-const formWrapped = reduxForm({
-    form: 'streamCreateForm',
-    //validate: validate
+export default reduxForm({
+    form: 'streamForm',
     validate
-})(StreamCreate)
-
-export default connect(null, {createStream})(formWrapped)
+})(StreamForm)
