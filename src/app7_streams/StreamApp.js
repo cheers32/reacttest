@@ -65,10 +65,11 @@ const StreamApp = () => {
                 {/*<Route path="/7/pageTwo" component={PageTwo}/>*/}
                 {/*<Route path="/7/pageTwo" component={PageTwo}/>*/}
                 <Route path="/7" exact component={StreamList}/>
-                <Route path="/7/new" component={StreamCreate}/>
-                <Route path="/7/edit" component={StreamEdit}/>
-                <Route path="/7/delete" component={StreamDelete}/>
-                <Route path="/7/show" component={StreamShow}/>
+                <Route path="/7/new" exact component={StreamCreate}/>
+                {/*colon means a variable, looks like only usable when passing down*/}
+                <Route path="/7/edit/:id" exact component={StreamEdit}/>
+                <Route path="/7/delete" exact component={StreamDelete}/>
+                <Route path="/7/show" exact component={StreamShow}/>
             </Router>
         </div>
         </Provider>
