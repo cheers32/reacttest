@@ -16,7 +16,7 @@ import {createStore, applyMiddleware, compose} from "redux";
 import reducers from './reducers'
 import AppMenu from "./AppMenu";
 import reduxThunk from "redux-thunk"
-import history from "./history";
+import customHistory from "./customHistory";
 
 // const PageOne = () => {
 //     return (
@@ -58,7 +58,7 @@ const StreamApp = () => {
             <h2>StreamApp</h2>
             {/*<BrowserRouter history={history}>*/}
             {/*this browserRouter comes with a history object, so cannot use custom object*/}
-            <Router history={history}>
+            <Router history={customHistory}>
                 <Header />
                 {AppMenu()}
                 {/*<Route path="/7/pageOne" exact={true} component={PageOne}/>*/}
@@ -68,7 +68,7 @@ const StreamApp = () => {
                 <Route path="/7/new" exact component={StreamCreate2}/>
                 {/*colon means a variable, looks like only usable when passing down*/}
                 <Route path="/7/edit/:id" exact component={StreamEdit2}/>
-                <Route path="/7/delete" exact component={StreamDelete}/>
+                <Route path="/7/delete/:id" exact component={StreamDelete}/>
                 <Route path="/7/show" exact component={StreamShow}/>
             </Router>
         </div>

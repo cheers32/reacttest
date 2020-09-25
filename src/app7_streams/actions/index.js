@@ -1,6 +1,6 @@
 import streams from "../apis/streams";
 import {SIGN_IN, SIGN_OUT, CREATE_STREAM, FETCH_STREAMS, FETCH_STREAM, EDIT_STREAM, DELETE_STREAM} from "./actionTypes";
-import history from '../history'
+import history from '../customHistory'
 
 export const signIn = (userId) => {  // this is to define actionCreators that returns an action
     return {
@@ -47,4 +47,5 @@ export const editStream = (id, formValues) => async dispatch => {
 export const deleteStream = (id) => async dispatch => {
     const response = await streams.delete(`/streams/${id}`)
     dispatch({type: DELETE_STREAM, payload: id})
+    history.push('/7')
 }

@@ -15,7 +15,8 @@ class StreamList extends React.Component{
                     {/*<button className={"ui button primary"}>Edit</button>*/}
                     <Link to={`/7/edit/${stream.id}`} className="ui button primary">Edit</Link>
                     {/*must use link to use the history, so that it can come back and forth*/}
-                    <button className={"ui button negative"}>Delete</button>
+                    {/*<button className={"ui button negative"}>Delete</button>*/}
+                    <Link to={`/7/delete/${stream.id}`} className="ui button negative">Delete</Link>
                 </div>
             )
     }
