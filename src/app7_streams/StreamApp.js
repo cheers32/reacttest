@@ -18,7 +18,7 @@ import AppMenu from "./AppMenu";
 import reduxThunk from "redux-thunk"
 import customHistory from "./customHistory";
 
-const NodeMediaServer = require('node-media-server');
+//const NodeMediaServer = require('node-media-server');
 
 // const PageOne = () => {
 //     return (
