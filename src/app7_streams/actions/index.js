@@ -39,7 +39,7 @@ export const fetchStreams = () => async dispatch => {
 }
 
 export const editStream = (id, formValues) => async dispatch => {
-    const response = await streams.patch(`/streams/${id}`, formValues)
+    const response = await streams.patch(`/streams/${id}`, formValues)  // changed this from put to patch
     dispatch({type: EDIT_STREAM, payload: response.data})
     history.push('/7')
 }
