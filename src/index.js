@@ -10,6 +10,7 @@ import StreamApp from "./app7_streams/StreamApp";
 import {BrowserRouter, Route} from "react-router-dom";
 import MenuBar from "./shared/MenuBar";
 import Clock from "./shared/Clock";
+import ContextApp from "./app8_context/ContextApp";
 
 // this render method will be called after setState() happens
 ReactDOM.render(
@@ -24,6 +25,7 @@ ReactDOM.render(
         <Route path="/5" component={ReduxSongApp}/>
         <Route path="/6" component={ReduxBlogApp}/>
         <Route path="/7" component={StreamApp}/>
+        <Route path="/8" component={ContextApp}/>
     </BrowserRouter>
     </div>,
     //<App1 />,
