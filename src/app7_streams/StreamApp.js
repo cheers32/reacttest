@@ -1,6 +1,6 @@
 import React from "react";
 //import {BrowserRouter, Route } from 'react-router-dom'
-import {Router, Route } from 'react-router-dom'
+import {Router, Route, Switch } from 'react-router-dom'
 //import { HashRouter, Link} from 'react-router-dom'
 import StreamList from "./components/StreamList";
 import StreamCreate2 from "./components/StreamCreate2";
@@ -17,6 +17,8 @@ import reducers from './reducers'
 import AppMenu from "./AppMenu";
 import reduxThunk from "redux-thunk"
 import customHistory from "./customHistory";
+
+const NodeMediaServer = require('node-media-server');
 
 // const PageOne = () => {
 //     return (
@@ -61,15 +63,18 @@ const StreamApp = () => {
             <Router history={customHistory}>
                 <Header />
                 {AppMenu()}
-                {/*<Route path="/7/pageOne" exact={true} component={PageOne}/>*/}
-                {/*<Route path="/7/pageTwo" component={PageTwo}/>*/}
-                {/*<Route path="/7/pageTwo" component={PageTwo}/>*/}
-                <Route path="/7" exact component={StreamList}/>
-                <Route path="/7/new" exact component={StreamCreate2}/>
-                {/*colon means a variable, looks like only usable when passing down*/}
-                <Route path="/7/edit/:id" exact component={StreamEdit2}/>
-                <Route path="/7/delete/:id" exact component={StreamDelete}/>
-                <Route path="/7/show" exact component={StreamShow}/>
+                <Switch>
+                    {/*this switch will ensure the first matched result to show*/}
+                    {/*<Route path="/7/pageOne" exact={true} component={PageOne}/>*/}
+                    {/*<Route path="/7/pageTwo" component={PageTwo}/>*/}
+                    {/*<Route path="/7/pageTwo" component={PageTwo}/>*/}
+                    <Route path="/7" exact component={StreamList}/>
+                    <Route path="/7/new" exact component={StreamCreate2}/>
+                    {/*colon means a variable, looks like only usable when passing down*/}
+                    <Route path="/7/edit/:id" exact component={StreamEdit2}/>
+                    <Route path="/7/delete/:id" exact component={StreamDelete}/>
+                    <Route path="/7/:id" exact component={StreamShow}/>
+                </Switch>
             </Router>
         </div>
         </Provider>
