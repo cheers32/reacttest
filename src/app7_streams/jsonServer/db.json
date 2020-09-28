@@ -1,44 +1,28 @@
 {
   "streams": [
     {
-      "title": "fff",
-      "description": "fff",
-      "currentUserId": "104549707928187016548",
-      "id": 19
-    },
-    {
-      "title": "sdsdf",
-      "description": "safsafdf",
-      "userId": null,
-      "id": 22
-    },
-    {
-      "title": "fff",
-      "description": "ffffff2",
-      "id": 26
-    },
-    {
-      "title": "mmmm",
-      "description": "3333",
-      "id": 27
-    },
-    {
-      "title": "mmmm",
-      "description": "mmm222",
+      "title": "ggg",
+      "description": "1221",
       "userId": "104549707928187016548",
-      "id": 28
+      "id": 31
     },
     {
-      "title": "ffffffddd",
-      "description": "ddddd",
+      "title": "ttt",
+      "description": "333",
       "userId": "104549707928187016548",
-      "id": 29
+      "id": 32
     },
     {
-      "description": "fsdf",
-      "title": "ffd",
+      "title": "sss",
+      "description": "1",
       "userId": "104549707928187016548",
-      "id": 30
+      "id": 33
+    },
+    {
+      "title": "hhh",
+      "description": "2",
+      "userId": "104549707928187016548",
+      "id": 34
     }
   ]
 }

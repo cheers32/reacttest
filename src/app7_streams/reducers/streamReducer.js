@@ -8,7 +8,7 @@ export default (state = {}, action) => {  // use an object to hold all streams, 
         case FETCH_STREAM:
             return {...state, [action.payload.id]: action.payload}
         case FETCH_STREAMS:
-            return {..._.mapKeys(action.payload, 'id')} // this looks to replace the existing state entirely, could skip using ...state
+            return {...state, ..._.mapKeys(action.payload, 'id')} // this looks to replace the existing state entirely
         case EDIT_STREAM:
             return {...state, [action.payload.id]: action.payload}
         case DELETE_STREAM:
